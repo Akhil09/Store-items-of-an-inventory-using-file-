@@ -1,3 +1,6 @@
+//A doubly linked list is used to implement the following code. 
+
+
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -5,26 +8,26 @@
 
 struct inventory
 {
-    struct inventory *prev;
-    long int item_code;
-    char item_name[50];
-    int quantity;
-    char doa[20];
-    char dom[20];
-    char ed[20];
-    struct inventory *next;
+    struct inventory *prev;                  // Pointer pointing to the previous node
+    long int item_code;                     // Data as item code
+    char item_name[50];                     // Data as item name
+    int quantity;                          // Quantity of a particular item
+    char doa[20];                          // Date of arrival of the item
+    char dom[20];                       // Date of manufacture of the item
+    char ed[20];                          // Expiry date of the item
+    struct inventory *next;                // Pointer pointing to the next node 
 };
 typedef struct inventory inv;
-inv *LP=NULL,*temp,*temp1,*temp2,*RP=NULL;
+inv *LP=NULL,*temp,*temp1,*temp2,*RP=NULL;   // Globally declaring the pointers to be used in the program  
 
-void create();
-void insert1();
-void insert2();
-void insert3();
-void display();
-void deletei();
-void savetofile();
-void readfromfile();
+void create();          // Creating an empty node
+void insert1();        //  Function to insert item at the beginning
+void insert2();        // Function to insert item at any position int the list
+void insert3();       // Function to insert item at the end 
+void display();      // Function to display the inventory
+void deletei();     //  Function to remove the item from the inventory
+void savetofile();   // Write items into the file
+void readfromfile(); // Read items from the file
 
 int count = 0;
 
